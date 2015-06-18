@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :posts, only: [:create]
 
+  #simple about page
+  get  "about"  => "posts#about"
+
   get 'tags/:tag', to: 'posts#index', as: "tag"
 
   # The priority is based upon order of creation: first created -> highest priority.
