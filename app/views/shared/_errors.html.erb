@@ -1,0 +1,13 @@
+<% if  act_rec_obj.errors.any? %>
+    <div class = "row" >
+      <div data-alert class="alert-box success radius">
+        <h5>There are validation concerns:</h5>
+        <ul>
+          <% act_rec_obj.errors.full_messages.each do |msg| %>
+              <li> <%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+<% end %>
+

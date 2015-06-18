@@ -1,0 +1,30 @@
+
+<div class = "row" >
+
+  <%= form_for @user do |f| %>
+
+    <%= render 'shared/errors', act_rec_obj:@user %>
+
+      <div class="large-5" >
+        <%= f.label 'Email or desired User Name'%>
+        <%= f.text_field :email, :placeholder => 'Either an email or a name..up to you.' %>  <br/>
+
+      </div>
+
+      <div class="large-5" >
+        <%= f.label :password %>
+        <%= f.password_field :password %>  <br/>
+      </div>
+
+
+      <div class="large-5">
+        <%= f.submit "Register", class: "button radius" %>
+      </div>
+
+
+        <% end %>
+
+  <%= link_to 'Go Back', root_path %>
+
+</div>
+
