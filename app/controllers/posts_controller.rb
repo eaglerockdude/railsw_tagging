@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_user, only: [:new, :create]
+  before_action :require_login, only: [:create]
 
   def index
     if params[:tag]
@@ -13,12 +13,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
       if @post.save
         flash[:notice]  = "Post was created successfully."
         redirect_to root_path
       end
-
   end
 
   private
