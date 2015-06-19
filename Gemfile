@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'will_paginate'
-
 gem 'better_errors'
 
 gem 'foundation-rails', '~> 5.5.2.1'
