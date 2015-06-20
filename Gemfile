@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'better_errors'
 
 gem 'foundation-rails', '~> 5.5.2.1'
@@ -34,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :development do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -51,7 +52,7 @@ end
 
 
 group :production do
-  gem 'pg',             '0.17.1'
+  gem 'pg'
   gem 'rails_12factor', '0.0.2'
 end
 
