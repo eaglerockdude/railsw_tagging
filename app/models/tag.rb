@@ -13,6 +13,7 @@ end
 
 
 # generates(for reference)
-# SELECT name, count(taggings.tag_id) as count
-# FROM "tags" INNER JOIN "taggings" ON "taggings"."tag_id" = "tags"."id"
-# GROUP BY taggings.tag_id
+
+# Tag Load (0.3ms)  SELECT tags.id, tags.name, count(taggings.tag_id)
+# as count FROM "tags" INNER JOIN "taggings" ON "taggings"."tag_id" = "tags"."id"
+# GROUP BY taggings.tag_id, tags.id, tags.name
