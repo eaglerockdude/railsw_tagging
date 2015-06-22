@@ -3,18 +3,26 @@
 
   <div class="large-5 columns">
 
-    <div class="tags-cloud glassy-bg mb pb">
+    <div class="tags-cloud glassy-bg mb pb">  
+      <h4 class="subheader text-left">Filter by:</h4>  
 
-      <h4 class="subheader text-left">Tag Cloud Links</h4>
+        <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %> 
+            <%= link_to tag.name, tag_path(tag.name), class: css_class %> 
+        <% end %>     </canvas> 
+       </div>
 
-      <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
-          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-      <% end %>
+    <div class="top-pad glassy-bg">
+            <%= render partial: "posts/new" %>
     </div>
 
-        <div class="top-pad glassy-bg">
-            <%= render partial: "posts/new" %>
-        </div>
+    <div id="myCanvasContainer">
+      <canvas width="300" height="300" id="myCanvas">
+        <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
+            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </canvas>
+    </div>
+
   </div>
 
     <div class= "large-7 columns" id="posts">
