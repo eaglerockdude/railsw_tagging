@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  #simple home page
+  root 'posts#home'
+  get  "home"  => "posts#home"
+
+  get  "index"  => "posts#index"
 
   resources :users
 
@@ -11,7 +16,7 @@ Rails.application.routes.draw do
   post "login"   => "sessions#create"
   get  "logout"  => "sessions#destroy"
 
-  root 'posts#index'
+  # root 'posts#index'
   resources :posts, only: [:create]
 
   #simple about page
